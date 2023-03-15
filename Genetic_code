@@ -1,0 +1,46 @@
+class genetic_code:
+    def __init__(self,name,genetic_codes):
+        self.name = name
+        self.genetic_codes = genetic_codes
+    def info(self):
+        return f"The abbreviation for amino acid is {self.name} the codes for amino acid are {self.genetic_codes}"
+    def sequence(): 
+        pass
+        
+Phenylalanine = genetic_code('Phe',['UUU','UUC'])
+Alanine = genetic_code('Ala', ['GCU','GCC','GCA','GCG'])
+Serine = genetic_code('Ser', ['UCU','UCC','UCA','UCG','AGU','AGC'])
+Leucine = genetic_code('Leu', ['UUA','UUG','CUU','CUC','CUA','CUG'])
+IsoLeucine = genetic_code('Ile', ['AUU', 'AUC', 'AUA'])
+Methionine = genetic_code('Meth', ['AUG'])
+Valine = genetic_code('Val', ['GUU','GUC','GUA','GUG'])
+Proline = genetic_code('Pro', ['CCU','CCC','CCA','CCG'])
+Threonine = genetic_code('Thr', ['ACU','ACC','ACA','ACG'])
+Tyrosine = genetic_code('Tyr', ['UAU','UAC'])
+Stop = genetic_code('STOP', ['UAG','UAA','UGA'])
+Histidine = genetic_code('His', ['CAU','CAC'])
+Glutamine = genetic_code('Gln', ['CAA','CAG'])
+Aspargine = genetic_code('Asn', ['AAU','AAC'])
+Lysine = genetic_code('Lys', ['AAA','AAG'])
+Aspartate = genetic_code('Asp', ['GAU','GAC'])
+Glutamate = genetic_code('Glu', ['GAA','GAG'])
+Cysteine = genetic_code('Cys', ['UGU','UGC'])
+Tryptophan = genetic_code('Trp', ['UGG'])
+Arginine = genetic_code('Arg', ['CGU','CGC','CGA','CGG','AGA','AGG'])
+Glycine = genetic_code('Gly', ['GGU','GGC','GGA','GGG'])
+
+amino_acids = [Phenylalanine,Alanine,Serine,Leucine,IsoLeucine,Methionine,Valine,Proline,Threonine,Tyrosine,Stop,Histidine,Glutamine,Aspargine,Lysine,Aspartate,Glutamate,Cysteine,Tryptophan,Arginine,Glycine]
+
+a = input('Enter the sequence ' )
+b = []
+for i in range(0,len(a),3):
+    b.append(a[i:i+3])
+
+for obj in amino_acids:
+    for i, element in enumerate(b):
+        for j, genetic_codes in enumerate([obj.genetic_codes]):
+            k = obj.genetic_codes[:]
+            for element in k:
+                if element == b[i]:
+                    b[i] = obj.name
+print(b)
