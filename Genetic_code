@@ -4,8 +4,7 @@ class genetic_code:
         self.genetic_codes = genetic_codes
     def info(self):
         return f"The abbreviation for amino acid is {self.name} the codes for amino acid are {self.genetic_codes}"
-    def sequence(): 
-        pass
+   
         
 Phenylalanine = genetic_code('Phe',['UUU','UUC'])
 Alanine = genetic_code('Ala', ['GCU','GCC','GCA','GCG'])
