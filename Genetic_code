@@ -30,16 +30,19 @@ Glycine = genetic_code('Gly', ['GGU','GGC','GGA','GGG'])
 
 amino_acids = [Phenylalanine,Alanine,Serine,Leucine,IsoLeucine,Methionine,Valine,Proline,Threonine,Tyrosine,Stop,Histidine,Glutamine,Aspargine,Lysine,Aspartate,Glutamate,Cysteine,Tryptophan,Arginine,Glycine]
 
-a = input('Enter the sequence ' )
-b = []
+a = input('Enter the sequence: ')
+b= []
 for i in range(0,len(a),3):
     b.append(a[i:i+3])
-
-for obj in amino_acids:
-    for i, element in enumerate(b):
-        for j, genetic_codes in enumerate([obj.genetic_codes]):
-            k = obj.genetic_codes[:]
-            for element in k:
-                if element == b[i]:
-                    b[i] = obj.name
 print(b)
+for i, element in enumerate(b):
+    #Iterate over each element (codon) in our input sequence
+    value = element
+    for obj in amino_acids:
+        #Iterate over each object (amino acid) in our class genetic_code
+        for j in obj.genetic_codes:
+         #Iterate over each element(genetic code) for each amino acid
+            if j == value:
+                b[i] = obj.name
+print(b)
+        
