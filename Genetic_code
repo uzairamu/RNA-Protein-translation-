@@ -40,7 +40,6 @@ else:
     b= []
     for i in range(0,len(a),3):
         b.append(a[i:i+3])
-        print(b)
         for i, element in enumerate(b):
             #Iterate over each element (codon) in our input sequence
             value = element
