@@ -34,8 +34,14 @@ a = input('Enter the sequence: ')
 try:
     if len(a)%3 !=0:
         raise ValueError('Please enter the sequence in proper format(should be divisible by 3)')
+    for i in range(0,len(a)):
+        c = (a[i] == 'U' or a[i] == 'C' or a[i] == 'A' or a[i] == 'G')
+        if c == False:
+            raise ValueError('Please enter the sequence in proper format(should only contain U,C,A,G)')
 except ValueError as e:
     print('Error: Not in Proper Format: ', e)
+    
+
 else:
     b= []
     for i in range(0,len(a),3):
@@ -49,6 +55,6 @@ else:
                     #Iterate over each element(genetic code) for each amino acid
                     if j == value:
                         b[i] = obj.name
-        print(b)
+    print(b)
         
         
